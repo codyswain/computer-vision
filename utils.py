@@ -25,6 +25,15 @@ def reportAccuracy(true_labels, predicted_labels, label_dict):
     # containing the name of that category
     # accuracy is a scalar, defined in the spec (in %)
 
+    numCorrectPredictions = 0
+    numPredictions = len(predicted_labels) 
+
+    for i in range(numPredictions):
+        if predicted_labels[i] == true_labels[i]:
+            numCorrectPredictions = numCorrectPredictions + 1
+
+    accuracy = numCorrectPredictions / numPredictions
+
     return accuracy
 
 def buildDict(train_images, dict_size, feature_type, clustering_type):
