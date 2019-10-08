@@ -5,10 +5,10 @@ from sklearn import neighbors, svm, cluster
 
 def imresize(input_image, target_size):
 	# resizes the input image to a new image of size [target_size, target_size].
-	print("Original dimensions: {}".format(input_image.shape))
+	# print("Original dimensions: {}".format(input_image.shape))
 	dim = (target_size, target_size)
 	resized = cv2.resize(input_image, dim)
-	print("Resized dimensions: {}".format(resized.shape))
+	# print("Resized dimensions: {}".format(resized.shape))
 
 	# normalizes the output image to be zero-mean, and in the [-1, 1] range.
 	output_image = cv2.normalize(resized, None, -255, 255, cv2.NORM_MINMAX)
