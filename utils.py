@@ -11,8 +11,8 @@ def imresize(input_image, target_size):
 	# print("Resized dimensions: {}".format(resized.shape))
 
 	# normalizes the output image to be zero-mean, and in the [-1, 1] range.
-	output_image = cv2.normalize(resized, None, -255, 255, cv2.NORM_MINMAX)
-	return output_image
+	output_image = cv2.normalize(resized, None, -1, 1, cv2.NORM_MINMAX)
+	return output_image # can print output_image to check
 
 def reportAccuracy(true_labels, predicted_labels, label_dict):
     # generates and returns the accuracy of a model
